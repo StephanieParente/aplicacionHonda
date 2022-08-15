@@ -227,12 +227,43 @@ public class InicioSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
-        javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: " + 
+        if (txtUser.getText().equals("Admin") && String.valueOf(passContr.getPassword()).equals("DLGNT_049")) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: " + 
+                    txtUser.getText() + "\nContraseña: " + String.valueOf(passContr.getPassword()), "LOGIN", 
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            Administrador admin = new Administrador();
+            admin.setVisible(true);
+        } else if(txtUser.getText().equals("ANRM") && String.valueOf(passContr.getPassword()).equals("MEST_349")) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: " + 
                     txtUser.getText() + "\nContraseña: " + String.valueOf(passContr.getPassword()), "LOGIN", 
                     javax.swing.JOptionPane.INFORMATION_MESSAGE);
         
-        GerenteTaller gt = new GerenteTaller();
-        gt.setVisible(true);
+            GerenteAdmin GAdmin = new GerenteAdmin();
+            GAdmin.setVisible(true);
+        } else if(txtUser.getText().equals("LUAC") && String.valueOf(passContr.getPassword()).equals("Crza_2023")) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: " + 
+                    txtUser.getText() + "\nContraseña: " + String.valueOf(passContr.getPassword()), "LOGIN", 
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        
+            GerenteTaller GTaller = new GerenteTaller();
+            GTaller.setVisible(true);
+        } else if(txtUser.getText().equals("CUBB") && String.valueOf(passContr.getPassword()).equals("LAIV-243")) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: " + 
+                    txtUser.getText() + "\nContraseña: " + String.valueOf(passContr.getPassword()), "LOGIN", 
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        
+            GerenteRH GRH = new GerenteRH();
+            GRH.setVisible(true);
+        } else if((txtUser.getText().equals("ALRT") && String.valueOf(passContr.getPassword()).equals("Tramp-492"))
+                    || (txtUser.getText().equals("FRPR") && String.valueOf(passContr.getPassword()).equals("BRTK_165"))
+                    || (txtUser.getText().equals("PAAB") && String.valueOf(passContr.getPassword()).equals("CONC_034"))) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: " + 
+                    txtUser.getText() + "\nContraseña: " + String.valueOf(passContr.getPassword()), "LOGIN", 
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        
+            VendedorPiso vendPiso = new VendedorPiso();
+            vendPiso.setVisible(true);
+        }
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void pnlCerrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlCerrarMouseEntered
